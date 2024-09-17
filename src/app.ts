@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 
 app.use("/users", userHandlers);
 
-// จัดการข้อผิดพลาด 404
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({ error: "Not Found" });
 });
