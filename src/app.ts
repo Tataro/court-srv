@@ -1,14 +1,13 @@
 import express, { Request, Response, NextFunction } from "express";
 import bodyParser from "body-parser";
 
-import userRoutes from "./routes/user";
+import userHandlers from "./handlers/user";
 
 const app = express();
 
 app.use(bodyParser.json());
 
-// ตั้งค่าเส้นทาง (Routes)
-app.use("/users", userRoutes);
+app.use("/users", userHandlers);
 
 // จัดการข้อผิดพลาด 404
 app.use((req: Request, res: Response, next: NextFunction) => {
