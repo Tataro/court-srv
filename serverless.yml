@@ -32,7 +32,7 @@ provider:
 
 functions:
   api:
-    handler: handler.handler
+    handler: src/handler.handler
     events:
       - httpApi: "*"
 
@@ -49,3 +49,7 @@ resources:
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
         TableName: ${param:tableName}
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
