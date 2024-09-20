@@ -1,4 +1,5 @@
 import { MongoClient, Db } from "mongodb";
+import "dotenv/config";
 
 let cachedDb: Db | null = null;
 
@@ -8,7 +9,7 @@ export async function connectToDatabase() {
   }
 
   const uri = process.env.MONGODB_URI as string;
-  console.log("uri", uri);
+  //   console.log("uri", uri);
 
   const client = await MongoClient.connect(uri);
 
